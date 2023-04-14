@@ -1,5 +1,5 @@
 const express = require('express');
-const home = require('./routes/home')
+const home = require('./routes/api/home')
 const connectDB = require('./config/mongodb');
 require('dotenv').config()
 
