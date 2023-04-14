@@ -1,4 +1,5 @@
 const express = require('express');
+const home = require('./routes/api/home')
 const connectDB = require('./config/mongodb');
 
 const app = express();
@@ -12,7 +13,7 @@ app.use(express.json());
 // app.use('/api/studyMaterial', require('./routes/api/studyMaterial'));
 // app.use('/api/syllabuses', require('./routes/api/syllabuses'));
 // app.use('/api/auth', require('./routes/api/auth'));
-app.use('/', require('./routes/api/home'));
+app.use('/', home);
 
 const port = process.env.PORT || 4000;
 
