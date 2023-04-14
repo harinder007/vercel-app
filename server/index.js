@@ -4,7 +4,7 @@ const connectDB = require('./config/mongodb');
 const app = express();
 app.use(express.json());
 
-connectDB();
+// connectDB();
 
 // // Define Routes
 // app.use('/api/papers', require('./routes/api/papers'));
