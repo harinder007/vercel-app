@@ -14,7 +14,6 @@ connectDB();
 // app.use('/api/syllabuses', require('./routes/api/syllabuses'));
 // app.use('/api/auth', require('./routes/api/auth'));
 app.use('/home', home);
-
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 
 app.listen(port, ()=>{console.log(`Listening to port ${port}`)})
