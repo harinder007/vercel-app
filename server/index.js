@@ -1,12 +1,18 @@
 const express = require('express');
-const home = require('./routes/home')
-
+const connectDB = require('./config/mongodb');
 
 const app = express();
 app.use(express.json());
 
-app.use("/home",home)
+connectDB();
 
-const port = process.env.PORT || 5000;
+// Define Routes
+app.use('/api/papers', require('./routes/api/papers'));
+app.use('/api/programs', require('./routes/api/programs'));
+app.use('/api/studyMaterial', require('./routes/api/studyMaterial'));
+app.use('/api/syllabuses', require('./routes/api/syllabuses'));
+app.use('/api/auth', require('./routes/api/auth'));
+
+const port = process.env.PORT || 4000;
 
 app.listen(port, ()=>{console.log(`Listening to port ${port}`)})
